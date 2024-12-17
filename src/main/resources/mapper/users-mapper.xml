@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 해당 파일에 모든 쿼리문을 작성 -->
+<mapper namespace="usersMapper">
+ <resultMap id="user" type="com.hyoni91.Diary.users.VO.UsersVO">
+  <id column="USER_NUM" property="userNum"/>
+  <result column="USER_NAME" property="userName" />
+  <result column="USER_PW" property="userPw" />
+  <result column="MAIL" property="mail" />
+ </resultMap>
+
+
+<!-- mail 중복체크 -->
+ <select id="mailChk" resultType="String">
+  SELECT
+  MAIL
+  FROM USERS
+  MAIL
+  WHERE
+  MAIL=#{mail}
+ </select>
+
+<!-- 가입 -->
+ <insert id="join" >
+  INSERT INTO USERS(
+   USER_NAME
+  ,USER_PW
+  ,MAIL
+  ) VALUES(
+   #{userName}
+  ,#{userPw}
+  ,#{mail}
+  )
+ </insert>
+
+<!-- 로그인 -->
+ <select id="login" resultMap="user">
+  SELECT
+  USER_NUM
+  ,USER_NAME
+  ,MAIL
+  FROM USERS
+  WHERE MAIL = #{mail}
+  AND USER_PW = #{userPw}
+ </select>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

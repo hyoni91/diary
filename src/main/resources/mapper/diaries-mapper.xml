@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 해당 파일에 모든 쿼리문을 작성 -->
+<mapper namespace="diaryMapper">
+ <resultMap id="diary" type="com.hyoni91.Diary.users.VO.DiariesVO">
+  <id column="D_NUM" property="dNum"/>
+  <result column="TITLE" property="title" />
+  <result column="CONTENT" property="content" />
+  <result column="D_DATE" property="dDate" />
+  <result column="USER_NUM" property="userNum" />
+  <result column="CATE_NUM" property="cateNum" />
+
+ </resultMap>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
