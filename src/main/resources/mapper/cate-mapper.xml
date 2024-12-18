@@ -8,7 +8,12 @@
   <result column="CATE_NAME" property="cateName" />
   <result column="CATE_CORLOR" property="cateCorlor" />
  </resultMap>
-	
+
+ <select id="cateList" resultMap="cate">
+  SELECT * FROM CATEGORYS;
+ </select>
+
+
 </mapper>
 
 

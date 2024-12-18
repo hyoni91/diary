@@ -1,9 +1,12 @@
 package com.hyoni91.Diary.users.Controller;
 
 import com.hyoni91.Diary.users.Service.UsersServiceImpl;
+import com.hyoni91.Diary.users.VO.CateVO;
 import com.hyoni91.Diary.users.VO.UsersVO;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class UsersController {
@@ -31,4 +34,8 @@ public class UsersController {
         return usersService.login(usersVO);
     }
 
+    @GetMapping("/cateList")
+    public List<CateVO> cateList(){
+        return usersService.cateList();
+    }
 }

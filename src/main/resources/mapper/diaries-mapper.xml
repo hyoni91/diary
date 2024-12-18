@@ -12,6 +12,25 @@
   <result column="CATE_NUM" property="cateNum" />
 
  </resultMap>
+
+ <insert id="write">
+  INSERT INTO DIARIES(
+  TITLE
+  ,CONTENT
+  ,D_DATE
+  ,CATE_NUM
+  ) VALUES(
+  #{title}
+  ,#{content}
+  ,#{dDate}
+  ,#{cateNum}
+  )
+ </insert>
+
+ <select id="myDiaryList" resultMap="diary">
+   SELECT * FROM DIARIES
+   WHERE USER_NUM = #{userNum}
+ </select>
 	
 </mapper>
 
